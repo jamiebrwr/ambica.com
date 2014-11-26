@@ -93,6 +93,10 @@ add_action( 'widgets_init', 'ycs_ambica_widgets_init' );
  */
 function ycs_ambica_scripts() {
 	wp_enqueue_style( 'ycs_ambica-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'ycs_gumby-style', get_template_directory_uri() . '/gumby.css' );
+	
+	wp_enqueue_style( 'ycs_custom-style', get_template_directory_uri() . '/custom.css' );
 
 	wp_enqueue_script( 'ycs_ambica-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

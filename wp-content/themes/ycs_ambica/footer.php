@@ -10,7 +10,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer row twelve columns" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'ycs_ambica' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'ycs_ambica' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
