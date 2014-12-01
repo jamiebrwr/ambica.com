@@ -5,7 +5,8 @@ body {
 	background:#D8C6C2;
 }
 header#masthead {
-	background: #F8E6DF;
+	/* background:url("http://www.ambica.com/wp-content/themes/ycs_ambica/images/bg-header.gif"); */
+	background:#494d4f;
 }
 #main {
 	background:#EFEFEF;
