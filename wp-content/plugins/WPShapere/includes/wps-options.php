@@ -7,7 +7,7 @@
 	$blog_from_name = get_option('blogname'); 
 	
 	//get all admin users
-	$user_query = new WP_User_Query( array( 'role' => 'WP Developer' ) );
+	$user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
 	if ( ! empty( $user_query->results ) ) {
 		foreach ( $user_query->results as $user ) {
 			$admin_users[$user->ID] = $user->display_name;
@@ -18,7 +18,7 @@
 		'name' => 'WPSHAPERE Options',
 		'title' => 'WPSHAPERE Plugin',
 		'icon' => 'dashicons-art',
-		'capability' => 'srh_wp_developer',
+		'capability' => 'administrator',
 	) );
 	
 	$generalTab = $wpshapePanel->createTab( array(

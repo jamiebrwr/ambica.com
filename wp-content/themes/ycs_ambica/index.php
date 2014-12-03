@@ -13,34 +13,40 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area eight columns">
+	<div id="primary" class="content-area twelve columns">
+
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+					<?php if ( 'post' == get_post_type() ) : ?>
+					<div class="entry-meta">
+						<?php ycs_ambica_posted_on(); ?>
+					</div><!-- .entry-meta -->
+					<?php endif; ?>
+				</header><!-- .entry-header -->
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				<div class="entry-content">
 
-			<?php endwhile; ?>
+					<?php putRevSlider("Todays Specials Slider") ?>
 
-			<?php ycs_ambica_paging_nav(); ?>
+					<?php
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . __( 'Pages:', 'ycs_ambica' ),
+							'after'  => '</div>',
+						) );
+					?>
+				</div><!-- .entry-content -->
 
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
+				<footer class="entry-footer">
+					<?php ycs_ambica_entry_footer(); ?>
+				</footer><!-- .entry-footer -->
+			</article><!-- #post-## -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php// get_sidebar(); ?>
 <?php get_footer(); ?>

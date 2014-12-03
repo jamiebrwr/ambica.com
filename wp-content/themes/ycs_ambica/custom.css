@@ -1,14 +1,82 @@
+/*-------------------------------------------------------------------------------------------*/
+/*
+/*
+/*
+/* font-family: 'Amatic SC', cursive;
+/* font-family: 'Merriweather', serif;
+/*
+/*-------------------------------------------------------------------------------------------*/
+
 body {
-	background: #F8DFF8;
+	 background:url("images/backgrounds_blossoms03.gif");
 }
-#page {
-	background:#D8C6C2;
-}
+/*-------------------------------------------------------------------------------------------*/
+/* Header */
+/*-------------------------------------------------------------------------------------------*/
 header#masthead {
-	background: #F8E6DF;
+    background:url("images/bg-header.gif");
+    height:194px;
+}
+.site-branding {
+	width:50%;
+	float:left
+}
+.site-branding a {
+	color:#f1eddd;
+	font-family: 'Merriweather', serif;
+}
+.logo {
+    background:url("images/ambica-logo.png");
+    display:block;
+    width:153px;
+    height:153px;
+    float:left;
+}
+.site-title {
+	clear:none;
+	font-size: 2.23607rem;
+	padding-bottom:0;
+	padding-top: 1.252em;
+}
+.site-description {
+	clear:none;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	font-family: 'Merriweather', serif;
+	color:#f1eddd;
+	padding-top:0;
+}
+header .address p {
+	font-family: 'Merriweather', serif;
+    float: right;
+    color:#fff;
+    line-height: 1.1em;
+	margin-top: 3.3rem;
+
+}
+
+
+/* Primary Navigation */
+#site-navigation {
+	clear:none;
+	width:50%;
+}
+#site-navigation a {
+	font-family: 'Merriweather', serif;
+}
+.main-navigation li {
+	padding: 0 0.552em;
+	font-size:1.5rem;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* Body */
+/*-------------------------------------------------------------------------------------------*/
+#page {
+	/* background:#D8C6C2; */
 }
 #main {
-	background:#EFEFEF;
+	background:#fff;
 }
 #secondary {
 	background:#D8C2CD;
