@@ -16,14 +16,10 @@ get_header(); ?>
 	<div id="primary" class="content-area twelve columns">
 
 		<main id="main" class="site-main" role="main">
-<<<<<<< HEAD
 		
 			<?php // The Query
 			$the_query = new WP_Query( array('post_type' => 'product', 'post_per_page' => 1 ) ); ?>
 			
-=======
-
->>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
 					<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
@@ -37,7 +33,6 @@ get_header(); ?>
 
 				<div class="entry-content">
 
-<<<<<<< HEAD
 					<!-- The Main Flexslider -->
 					<div id="main-slider" class="flexslider">
 					
@@ -97,16 +92,6 @@ get_header(); ?>
 						?>
 					</div><!-- #secondary-slider -->
 
-=======
-					<?php putRevSlider("Todays Specials Slider") ?>
-
-					<?php
-						wp_link_pages( array(
-							'before' => '<div class="page-links">' . __( 'Pages:', 'ycs_ambica' ),
-							'after'  => '</div>',
-						) );
-					?>
->>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
 				</div><!-- .entry-content -->
 
 				<footer class="entry-footer">
