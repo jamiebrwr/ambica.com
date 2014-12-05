@@ -13,34 +13,94 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area eight columns">
+	<div id="primary" class="content-area twelve columns">
+
 		<main id="main" class="site-main" role="main">
+		
+			<?php // The Query
+			$the_query = new WP_Query( array('post_type' => 'product', 'post_per_page' => 1 ) ); ?>
+			
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-		<?php if ( have_posts() ) : ?>
+					<?php if ( 'post' == get_post_type() ) : ?>
+					<div class="entry-meta">
+						<?php ycs_ambica_posted_on(); ?>
+					</div><!-- .entry-meta -->
+					<?php endif; ?>
+				</header><!-- .entry-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+				<div class="entry-content">
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+					<!-- The Main Flexslider -->
+					<div id="main-slider" class="flexslider">
+					
+						<?php // The Loop
+						if ( $the_query->have_posts() ) { ?>
+						
+							<h2>Today's Specials</h2>
+							
+							<ul class="slides">
+							<?php while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+								echo '<li>';
+									echo '<div class="">';
+											the_excerpt();
+											//echo '<a href="'. get_the_permalink() .'" class="read-more">Read More</a>';
+									echo '</div>';
+									if ( has_post_thumbnail() ) :
+										the_post_thumbnail( 'full', array( 'class' => 'alignright' ) );
+									endif;
+								echo '</li>';
+							} ?>
+							</ul>
+						<?php } else {
+							// no posts found
+						}
+						/* Restore original Post Data */
+						wp_reset_postdata();
+						?>
+					
+					  </ul>
+					</div><!-- #main-slider -->
+					
+					<!-- Place somewhere in the <body> of your page -->
+					<div id="secondary-slider" class="flexslider">
+					  <?php // The Loop
+						if ( $the_query->have_posts() ) { ?>
+						
+							<h2>Featured Items</h2>
+							
+							<ul class="slides">
+							<?php while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+								echo '<li>';
+									if ( has_post_thumbnail() ) :
+										echo '<a href="' . get_the_permalink() . '">';
+											the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
+										echo '</a>';
+									endif;
+								echo '</li>';
+							} ?>
+							</ul>
+						<?php } else {
+							// no posts found
+						}
+						/* Restore original Post Data */
+						wp_reset_postdata();
+						?>
+					</div><!-- #secondary-slider -->
 
-			<?php endwhile; ?>
+				</div><!-- .entry-content -->
 
-			<?php ycs_ambica_paging_nav(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
+				<footer class="entry-footer">
+					<?php ycs_ambica_entry_footer(); ?>
+				</footer><!-- .entry-footer -->
+			</article><!-- #post-## -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php// get_sidebar(); ?>
 <?php get_footer(); ?>

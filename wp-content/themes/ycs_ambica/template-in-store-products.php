@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: In Store Products
+ * Template Name: Fullwidth
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.

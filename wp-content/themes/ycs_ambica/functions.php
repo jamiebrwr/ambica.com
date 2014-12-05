@@ -96,11 +96,17 @@ function ycs_ambica_scripts() {
 	
 	wp_enqueue_style( 'ycs_gumby-style', get_template_directory_uri() . '/gumby.css' );
 	
+	wp_enqueue_style( 'ycs_flexslider', get_template_directory_uri() . '/css/flexslider.css' );
+	
 	wp_enqueue_style( 'ycs_custom-style', get_template_directory_uri() . '/custom.css' );
 
 	wp_enqueue_script( 'ycs_ambica-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'ycs_ambica-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
+	//wp_enqueue_script( 'ycs_ambica-jquery.flexslider-min', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.2.2', true );
+	
+	//wp_enqueue_script( 'ycs_ambica-jquery.flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array(), '2.2.2', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -132,3 +138,35 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+// Replaces the excerpt "more" text by a link
+function ycs_ambica_excerpt_more($more) {
+	global $post;
+	return '<a class="read-more" href="'. get_permalink($post->ID) . '"> Read More</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+/**
+ * woocommerce_sidebar hook
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
+function ycs_ambica_remove_woocommerce_sidebar(){
+	remove_action( 'woocommerce_get_sidebar', 'woocommerce_sidebar', 10 );	
+}
+add_action('woocommerce_get_sidebar', 'ycs_ambica_remove_woocommerce_sidebar', 10 );
+
+
+
+
+
+
+
+
+
+
+
+
+
