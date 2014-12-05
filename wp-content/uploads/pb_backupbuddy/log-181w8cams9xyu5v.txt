@@ -1,2 +1,0 @@
-[Dec 4, 2014 10:30:11 0-error] [] Unable to create backup storage directory (/Volumes/⌥Grind½Time→/сайты/ambica.com/wp-content/uploads/backupbuddy_backups/)
-[Dec 4, 2014 10:30:11 0-error] Unable to create backup storage directory (/Volumes/⌥Grind½Time→/сайты/ambica.com/wp-content/uploads/backupbuddy_backups/)<p><a href="http://ithemes.com/codex/page/BackupBuddy:_Error_Codes#9002" target="_new"><i>BackupBuddy Error Code 9002 - Click for more details.</i></a></p> Error Code: 9002

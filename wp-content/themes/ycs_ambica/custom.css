@@ -9,6 +9,7 @@
 
 body {
 	 background:url("images/backgrounds_blossoms03.gif");
+<<<<<<< HEAD
 }
 h1, h2 {
 	font-family: 'Amatic SC', cursive;
@@ -23,11 +24,17 @@ p {
 a.read-more {
 	color:#27bf63;
 	font-family: 'Amatic SC', cursive;
+=======
+>>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
 }
 /*-------------------------------------------------------------------------------------------*/
 /* Header */
 /*-------------------------------------------------------------------------------------------*/
 header#masthead {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
     background:url("images/bg-header.gif");
     height:194px;
 }
@@ -51,7 +58,10 @@ header#masthead {
 	font-size: 2.23607rem;
 	padding-bottom:0;
 	padding-top: 1.252em;
+<<<<<<< HEAD
 	margin-left:4.5em;
+=======
+>>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
 }
 .site-description {
 	clear:none;
@@ -60,7 +70,10 @@ header#masthead {
 	font-family: 'Merriweather', serif;
 	color:#f1eddd;
 	padding-top:0;
+<<<<<<< HEAD
 	margin-left:9em;
+=======
+>>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
 }
 header .address p {
 	font-family: 'Merriweather', serif;
@@ -77,6 +90,7 @@ header .address p {
 	clear:none;
 	width:50%;
 }
+<<<<<<< HEAD
 .main-navigation li {
 	padding: 0.352em 0.552em;
 	font-size:1.5rem;
@@ -102,6 +116,28 @@ header .address p {
 	-moz-box-shadow:0;
 	-o-box-shadow:0;
 	box-shadow: 0 0px 0px rgba(0,0,0,.2);
+=======
+#site-navigation a {
+	font-family: 'Merriweather', serif;
+}
+.main-navigation li {
+	padding: 0 0.552em;
+	font-size:1.5rem;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/* Body */
+/*-------------------------------------------------------------------------------------------*/
+#page {
+	/* background:#D8C6C2; */
+=======
+	/* background:url("http://www.ambica.com/wp-content/themes/ycs_ambica/images/bg-header.gif"); */
+	background:#494d4f;
+>>>>>>> FETCH_HEAD
+}
+#main {
+	background:#fff;
+>>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
 }
 .flex-viewport {
 	max-height: 300px;

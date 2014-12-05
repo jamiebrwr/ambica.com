@@ -9,5 +9,18 @@ wp-content/backups/
 wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
+<<<<<<< HEAD
 wp-content/wp-cache-config.php
 /nbproject/private/
+=======
+<<<<<<< HEAD
+wp-content/wp-cache-config.php
+/nbproject/private/
+=======
+wp-content/uploads/backupbuddy_backups/
+wp-content/uploads/backupbuddy_temp/
+wp-content/uploads/pb_backupbuddy/
+wp-content/uploads/titan-framework-wpshapere-css.css/
+wp-content/wp-cache-config.php
+>>>>>>> FETCH_HEAD
+>>>>>>> 5db3587eea4cfcf84099d084fbc1fa12023a0b44
