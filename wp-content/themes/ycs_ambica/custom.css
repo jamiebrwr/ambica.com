@@ -1,5 +1,7 @@
 /*-------------------------------------------------------------------------------------------*/
-/*
+/* #f1eddd Beige
+/* #d0631b orange
+/* #27be62 Green
 /*
 /*
 /* font-family: 'Amatic SC', cursive;
@@ -13,6 +15,10 @@ body {
 h1, h2 {
 	font-family: 'Amatic SC', cursive;
 }
+h6 {
+	font-family: 'Merriweather', serif;
+	font-size: 0.9rem;
+}
 p {
 	font-family: 'Merriweather', serif;
 	font-size: 0.8rem;
@@ -23,17 +29,30 @@ p {
 a.read-more {
 	color:#27bf63;
 	font-family: 'Amatic SC', cursive;
+	font-size:2em;
+	float:right;
+}
+a:visited {
+	color:#d0631b;
+}
+table thead {
+	background-color: #d0631b;
 }
 /*-------------------------------------------------------------------------------------------*/
 /* Header */
 /*-------------------------------------------------------------------------------------------*/
-header#masthead {
-    background:url("images/bg-header.gif");
+#masthead {
+    background:url("images/bg-header.gif") #fff;
     height:194px;
 }
+#masthead-wrapper {
+	/* background:#fff; */
+	height:100%;
+}
 .site-branding {
-	width:50%;
-	float:left
+	width:41.5%;
+	display:inline-block;
+	float: left
 }
 .site-branding a {
 	color:#f1eddd;
@@ -64,8 +83,8 @@ header#masthead {
 }
 header .address p {
 	font-family: 'Merriweather', serif;
-    float: right;
     color:#fff;
+    float:right;
     line-height: 1.1em;
 	margin-top: 3.3rem;
 
@@ -74,8 +93,11 @@ header .address p {
 
 /* Primary Navigation */
 #site-navigation {
-	clear:none;
-	width:50%;
+	width:55%;
+	display:inline-block;
+}
+.main-navigation {
+	float:none;
 }
 .main-navigation li {
 	padding: 0.352em 0.552em;
@@ -87,6 +109,12 @@ header .address p {
 }
 #site-navigation li a:hover {
 	color:#27bf63;
+}
+
+/* Submenus */
+ul.sub-menu {
+	background: #f1eddd;
+	border:1px solid #ccc9bc;
 }
 
 
@@ -113,7 +141,8 @@ header .address p {
 	margin-left: 0.7rem;
 }
 .flexslider p {
-	width:35%;
+	max-width:35%;
+	min-width: 450px;
 	float:left;
 	margin:1em;
 }
@@ -139,6 +168,68 @@ header .address p {
 .flexslider:hover .flex-prev { opacity: 1; left: 0px; }
 .flexslider:hover .flex-next { opacity: 1; right: 0px; }
 
+/* Secondary Homepage Flexslider */
+#secondary-slider {
+	padding-top: 1.7em;
+	font-family: 'Merriweather', serif;
+	color:#fff;
+	width:90%;
+	margin:0 auto;
+}
+
+#secondary-slider .flex-viewport li {
+	margin-right: 7em;
+}
+#secondary-slider .flex-viewport h6,
+#secondary-slider .flex-viewport li a {
+	color:#fff;
+
+}
+h1.widget-title {
+	font-size: 2em;
+	/* color:#fff; */
+}
+.product-metadata.clear {
+	background:#27be62;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 20px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 0;
+
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 0;
+
+	-webkit-box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+	box-shadow: 3px 3px 1px 0px rgba(0,0,0,0.75);
+}
+.product-metadata-inner {
+	max-width:20%;
+	display:block;
+	float:left;
+	padding:0.3em 0.4em 0.4em;
+}
+#secondary-slider a.add_to_cart_button {
+	background:url("images/ico-cart.jpg") #fff;
+	width: 38px;
+    height:auto;
+    text-indent:-9999px;
+    display:block;
+}
+#secondary-slider h6 {
+	float: left;
+	max-width: 65%;
+	padding:0.4em 0.4em 0.4em 0.5em;
+}
+#secondary-slider .amount {
+	font-family: 'Merriweather', serif;
+}
+#secondary-slider sup {
+	font-size: 40%;
+}
+
 /*-------------------------------------------------------------------------------------------*/
 /* Entry Content */
 /*-------------------------------------------------------------------------------------------*/
@@ -150,16 +241,25 @@ header .address p {
 	margin: 0;
 	padding-top: 1.5em;
 }
-
+.flex-image {
+	max-width: 100%;
+	height: auto;
+}
 /*-------------------------------------------------------------------------------------------*/
 /* Sidebar */
 /*-------------------------------------------------------------------------------------------*/
 #secondary {
-	padding-top: 1.7em;
+	margin-top: 2.72766%;
 }
 
-h1.widget-title{
-	font-size: 2em;
+/*-------------------------------------------------------------------------------------------*/
+/* Footer */
+/*-------------------------------------------------------------------------------------------*/
+footer {
+	background: #fff;
+}
+.site-info {
+	clear:both;
 }
 
 
@@ -167,9 +267,35 @@ h1.widget-title{
 /* Woocommerce Styles */
 /*-------------------------------------------------------------------------------------------*/
 
-
-
-
+/* Buttons */
+.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button {
+	color: #5e5e5e;
+	text-shadow: 0 1px 0 rgba(241,237,221,0.8);
+	border: 1px solid #c7c0c7;
+	background: #f7f6f7;
+	background: -webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#dfdbdf));
+	background: -webkit-linear-gradient(#f7f6f7,#f1eddd);
+	background: -moz-linear-gradient(center top,#f7f6f7 0%,#f1eddd 100%);
+	background: -moz-gradient(center top,#f7f6f7 0%,#f1eddd 100%);
+	white-space: nowrap;
+	display: inline-block;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075), inset 0 1px 0 rgba(241,237,221,0.3), 0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075), inset 0 1px 0 rgba(241,237,221,0.3), 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075), inset 0 1px 0 rgba(241,237,221,0.3), 0 1px 2px rgba(0,0,0,0.1);
+}
+.woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #content input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page #content input.button:hover {
+	background: #f7f6f7;
+	background: -webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#f7f6f7));
+	background: -webkit-linear-gradient(#f7f6f7,#f7f6f7);
+	background: -moz-linear-gradient(center top,#f7f6f7 0%,#f7f6f7 100%);
+	background: -moz-gradient(center top,#f7f6f7 0%,#f7f6f7 100%);
+}
+.woocommerce .woocommerce-info::before, .woocommerce-page .woocommerce-info::before {
+	background-color: #d0631b;
+}
+.woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info {
+	border-top:3px solid #d0631b;
+}
 
 
 

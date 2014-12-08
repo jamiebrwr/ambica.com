@@ -85,6 +85,31 @@ function ycs_ambica_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+	register_sidebar( array(
+		'name' => 'Footer left',
+		'id' => 'footer_left',
+		'before_widget' => '<div class="three columns push_one">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	) );
+	register_sidebar( array(
+		'name' => 'Footer Middle',
+		'id' => 'footer_middle',
+		'before_widget' => '<div class="three columns push_one">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	) );
+	register_sidebar( array(
+		'name' => 'Footer right',
+		'id' => 'footer_right',
+		'before_widget' => '<div class="three columns push_one">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="rounded">',
+		'after_title' => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'ycs_ambica_widgets_init' );
 
@@ -93,19 +118,19 @@ add_action( 'widgets_init', 'ycs_ambica_widgets_init' );
  */
 function ycs_ambica_scripts() {
 	wp_enqueue_style( 'ycs_ambica-style', get_stylesheet_uri() );
-	
+
 	wp_enqueue_style( 'ycs_gumby-style', get_template_directory_uri() . '/gumby.css' );
-	
+
 	wp_enqueue_style( 'ycs_flexslider', get_template_directory_uri() . '/css/flexslider.css' );
-	
+
 	wp_enqueue_style( 'ycs_custom-style', get_template_directory_uri() . '/custom.css' );
 
 	wp_enqueue_script( 'ycs_ambica-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'ycs_ambica-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	
+
 	//wp_enqueue_script( 'ycs_ambica-jquery.flexslider-min', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.2.2', true );
-	
+
 	//wp_enqueue_script( 'ycs_ambica-jquery.flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array(), '2.2.2', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -151,20 +176,14 @@ add_filter('excerpt_more', 'new_excerpt_more');
 /**
  * woocommerce_sidebar hook
  *
+ * remove single product sidebar
  * @hooked woocommerce_get_sidebar - 10
  */
-function ycs_ambica_remove_woocommerce_sidebar(){
-	remove_action( 'woocommerce_get_sidebar', 'woocommerce_sidebar', 10 );	
+function woocommerce_remove_sidebar_shop() {
+    if( is_product() || 'product' == get_post_type() )
+       remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 }
-add_action('woocommerce_get_sidebar', 'ycs_ambica_remove_woocommerce_sidebar', 10 );
-
-
-
-
-
-
-
-
+add_action( 'template_redirect', 'woocommerce_remove_sidebar_shop' );
 
 
 
