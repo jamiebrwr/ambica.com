@@ -59,7 +59,6 @@ jQuery(document).ready(function(){
 	    itemWidth: 210,
 	    itemMargin: 5
     });
-
 });
 </script>
 <!-- End FlexSlider -->

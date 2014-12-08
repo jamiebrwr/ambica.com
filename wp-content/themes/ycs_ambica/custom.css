@@ -9,6 +9,19 @@
 /*
 /*-------------------------------------------------------------------------------------------*/
 
+/* Typography */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	font-family: 'Merriweather', serif;
+}
+	
+/* Global Defaults */
 body {
 	 background:url("images/backgrounds_blossoms03.gif");
 }
@@ -23,9 +36,8 @@ p {
 	font-family: 'Merriweather', serif;
 	font-size: 0.8rem;
 }
-#content {
-	background:#fff;
-}
+
+/* Links */
 a.read-more {
 	color:#27bf63;
 	font-family: 'Amatic SC', cursive;
@@ -38,6 +50,8 @@ a:visited {
 table thead {
 	background-color: #d0631b;
 }
+
+
 /*-------------------------------------------------------------------------------------------*/
 /* Header */
 /*-------------------------------------------------------------------------------------------*/
@@ -92,7 +106,7 @@ header .address p {
 
 
 /* Primary Navigation */
-#site-navigation {
+.main-navigation {
 	width:55%;
 	display:inline-block;
 }
@@ -103,11 +117,11 @@ header .address p {
 	padding: 0.352em 0.552em;
 	font-size:1.5rem;
 }
-#site-navigation li a {
+.main-navigation li a {
 	font-family: 'Merriweather', serif;
 	color:#494d4f;
 }
-#site-navigation li a:hover {
+.main-navigation li a:hover {
 	color:#27bf63;
 }
 
@@ -146,48 +160,69 @@ ul.sub-menu {
 	float:left;
 	margin:1em;
 }
+
 #main-slider .flex-control-nav {
-	width: 33%;
+	/* width: 33%; */
 }
 #main-slider .flex-direction-nav a {
-	margin: 0px 0 0;
-	top: 100%;
+	/* margin: 0px 0 0; */
+	/* top: 100%; */
 }
 .flex-control-paging li a {
+
 	background: rgba(242,238,212,1);
 	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
 	-o-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
 	box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+
 }
+/*
 .flex-control-paging li a.flex-active {
 	background: rgba(114,102,88,0.9);
 }
+
 .flex-direction-nav .flex-prev { left: 0px; }
 .flex-direction-nav .flex-next { right: 0px; text-align: right; }
 .flexslider:hover .flex-prev { opacity: 1; left: 0px; }
 .flexslider:hover .flex-next { opacity: 1; right: 0px; }
+*/
 
 /* Secondary Homepage Flexslider */
 #secondary-slider {
 	padding-top: 1.7em;
 	font-family: 'Merriweather', serif;
 	color:#fff;
-	width:90%;
+	width:95%;
 	margin:0 auto;
 }
-
 #secondary-slider .flex-viewport li {
-	margin-right: 7em;
+	margin-right: 4em;
 }
-#secondary-slider .flex-viewport h6,
-#secondary-slider .flex-viewport li a {
+#secondary-slider .flex-viewport li a,
+#secondary-slider .flex-viewport h6 {
 	color:#fff;
 
 }
-h1.widget-title {
-	font-size: 2em;
-	/* color:#fff; */
+
+/* Products */
+#secondary-slider a.add_to_cart_button {
+	background:url("images/ico-cart.jpg") #fff;
+	width: 38px;
+    height:auto;
+    text-indent:-9999px;
+    display:block;
+}
+#secondary-slider h6 {
+	float: left;
+	max-width: 65%;
+	padding:0.4em 0.4em 0.4em 0.5em;
+}
+#secondary-slider .amount {
+	font-family: 'Merriweather', serif;
+}
+#secondary-slider sup {
+	font-size: 40%;
 }
 .product-metadata.clear {
 	background:#27be62;
@@ -211,46 +246,43 @@ h1.widget-title {
 	float:left;
 	padding:0.3em 0.4em 0.4em;
 }
-#secondary-slider a.add_to_cart_button {
-	background:url("images/ico-cart.jpg") #fff;
-	width: 38px;
-    height:auto;
-    text-indent:-9999px;
-    display:block;
-}
-#secondary-slider h6 {
-	float: left;
-	max-width: 65%;
-	padding:0.4em 0.4em 0.4em 0.5em;
-}
-#secondary-slider .amount {
-	font-family: 'Merriweather', serif;
-}
-#secondary-slider sup {
-	font-size: 40%;
-}
 
 /*-------------------------------------------------------------------------------------------*/
-/* Entry Content */
+/* Entry Content --- #page -> #content -> #primary -> #main -> article #post-ID -> .entry... */
 /*-------------------------------------------------------------------------------------------*/
+
+/* #page -> #content -> #primary -> #main */
 #page {
 	/* background:#D8C6C2; */
 }
+#content {
+	background:#fff;
+}
+#primary {}
 #main {}
+/* Entry */
+article{}
+.entry-header{}
 .entry-content {
 	margin: 0;
 	padding-top: 1.5em;
 }
-.flex-image {
-	max-width: 100%;
-	height: auto;
-}
+.entry-footer{}
 /*-------------------------------------------------------------------------------------------*/
 /* Sidebar */
 /*-------------------------------------------------------------------------------------------*/
 #secondary {
 	margin-top: 2.72766%;
 }
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* Widgets */
+/*-------------------------------------------------------------------------------------------*/
+.widget-title {
+	font-size: 2em;
+}
+
 
 /*-------------------------------------------------------------------------------------------*/
 /* Footer */
@@ -266,7 +298,6 @@ footer {
 /*-------------------------------------------------------------------------------------------*/
 /* Woocommerce Styles */
 /*-------------------------------------------------------------------------------------------*/
-
 /* Buttons */
 .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button {
 	color: #5e5e5e;
@@ -283,6 +314,7 @@ footer {
 	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075), inset 0 1px 0 rgba(241,237,221,0.3), 0 1px 2px rgba(0,0,0,0.1);
 	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075), inset 0 1px 0 rgba(241,237,221,0.3), 0 1px 2px rgba(0,0,0,0.1);
 }
+/* Buttons:hover */
 .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #content input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page #content input.button:hover {
 	background: #f7f6f7;
 	background: -webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#f7f6f7));
@@ -296,8 +328,11 @@ footer {
 .woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info {
 	border-top:3px solid #d0631b;
 }
-
-
+/* Product Image borders */
+.woocommerce ul.products li.product a img, .woocommerce-page ul.products li.product a img {
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0px 0px 0 rgba(0,0,0,0.3);
+}
 
 
 
